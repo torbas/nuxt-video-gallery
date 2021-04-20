@@ -23,13 +23,12 @@ const createStore = () => {
         state: () => ({
             // USER NAV COMPONENT
             loggedIn: false,
-            testData: "Hello"
         }),
         actions: {
-            async checkLogin() {
-              console.log("check login");
+            async login() {
+              //console.log("check login");
               this.state.loggedIn = true;
-              console.log("check login", this.state.loggedIn);
+              //console.log("check login", this.state.loggedIn);
 
             }
           }

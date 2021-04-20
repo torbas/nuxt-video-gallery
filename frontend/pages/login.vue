@@ -7,15 +7,15 @@
         <b-form @submit="onSubmit">
           <b-form-group
             id="input-group-1"
-            label="Email address:"
+            label="Username:"
             label-for="input-1"
           >
             <b-form-input
               id="input-1"
-              v-model="form.email"
-              type="email"
+              v-model="form.username"
+              type="text"
               required
-              placeholder="Enter email"
+              placeholder="Enter username"
             ></b-form-input>
           </b-form-group>
           <b-button type="submit" variant="primary">Submit</b-button>
@@ -31,7 +31,7 @@ export default {
     return {
       users: [],
       form: {
-        email: ''
+        username: ''
       },
     };
   },
@@ -42,15 +42,20 @@ export default {
   methods: {
     onSubmit(){
       event.preventDefault();
-      var email = this.form.email;
+      var username = this.form.username;
       var users = this.users;
       Object.keys(users).forEach(key => {
-        //console.log(key, users[key].username);
-        if(email)
+        //loop through users list
+        if(username == users[key].username){
+          //console.log("match");
+          //quick and dirty login TODO: make it more secure
+          this.$store.dispatch('login');
+          this.$router.push('/');
+        }
       });
-      this.$store.dispatch('checkLogin');
+    
     },
-  }
+  },
 }
 </script>
 
