@@ -50,7 +50,7 @@ export default {
           //console.log("match");
           //quick and dirty login TODO: make it more secure
           this.$store.dispatch('login');
-          this.$router.push('/');
+          this.$router.push('/videos');
         }
       });
     
