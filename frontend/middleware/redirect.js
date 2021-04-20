@@ -1,3 +1,5 @@
 export default function ({ store, redirect }) {
-  return redirect('/login')
+	console.log(redirect);
+
+  //return redirect('/login');
 }

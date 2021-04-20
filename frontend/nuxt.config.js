@@ -53,8 +53,15 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    // proxy: true
+    baseURL: 'http://localhost:8080',
+  },
+
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

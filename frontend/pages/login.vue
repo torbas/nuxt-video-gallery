@@ -29,14 +29,26 @@
 export default {
   data() {
     return {
+      users: [],
       form: {
         email: ''
       },
     };
   },
+  async fetch() {
+    let { data } = await this.$axios.get("/users");
+    this.users = data.data;
+  },
   methods: {
     onSubmit(){
-      console.log('A form was submitted');
+      event.preventDefault();
+      var email = this.form.email;
+      var users = this.users;
+      Object.keys(users).forEach(key => {
+        //console.log(key, users[key].username);
+        if(email)
+      });
+      this.$store.dispatch('checkLogin');
     },
   }
 }
