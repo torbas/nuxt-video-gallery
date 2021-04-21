@@ -5,7 +5,7 @@
 <script>
 
     export default {
-        layout: 'VideoPlayer',
+        layout: 'Video',
     }
 </script>
 
