@@ -35,6 +35,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    {src: '~/plugins/vee-validate.js', ssr: false},
   ],
   /*
   ** Auto import components
@@ -67,5 +68,13 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    // Add exception
+    transpile: [
+      "vee-validate/dist/rules"
+    ],
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
   }
 }
