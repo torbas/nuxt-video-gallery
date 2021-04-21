@@ -15,7 +15,7 @@
     </b-col>
     <b-col>
       <div class="thumbnail">
-        <b-img src="https://via.placeholder.com/300x150.png" fluid alt="Fluid image"></b-img>
+        <b-img :src="`${this.videoInfo.thumbnail_url}`" fluid alt="Fluid image"></b-img>
       </div>
     </b-col>
   </b-row>
@@ -23,11 +23,22 @@
 </template>
 
 <script>
-  //currently thumbnails are placeholder images
 
   export default {
       //links to videosSection in v-for loop in videos/index
       props: ['videosSection'],
+      data() {
+        return {
+          videoInfo: [],
+        };
+      },
+      async fetch() {
+        var url = 'http://fast.wistia.net/oembed?url=http://home.wistia.com/medias/' + this.videosSection.video_id + '?embedType=async&videoWidth=640';
+        let { data } = await this.$axios.get(url);
+        this.videoInfo = data;
+        console.log(this.videoInfo);
+      },
+
   }
 </script>
 
