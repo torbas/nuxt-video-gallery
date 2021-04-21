@@ -16,10 +16,12 @@
 </template>
 
 <script>
+	//TODO: style embed player
     export default {
         middleware: 'redirect',
         computed: {
             video() {
+            	//get id of video via url params
                 return this.$store.getters.getVideoById(this.$route.params.id);
             }
         },

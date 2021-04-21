@@ -17,20 +17,11 @@
   text-align: center;
 }
 
-.card-body {
+.container, .container-fluid {
   font-family: "granville",Georgia,"Times New Roman",serif;
 }
 
 .title {
-  font-family: 'Quicksand',
-  'Source Sans Pro',
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  Roboto,
-  'Helvetica Neue',
-  Arial,
-  sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

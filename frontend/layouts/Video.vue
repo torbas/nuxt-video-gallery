@@ -15,8 +15,9 @@ import { mapGetters } from 'vuex'
 </script>
 
 <style>
-.container-fluid {
-  font-family: "granville",Georgia,"Times New Roman",serif;
+
+html, .container, .container-fluid{
+  font-family: "granville",Georgia,"Times New Roman",serif; 
 }
 
 .links {
