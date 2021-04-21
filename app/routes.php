@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\User\ViewUserAction;
+
+use App\Application\Actions\Video\ListVideosAction;
+use App\Application\Actions\Video\ViewVideoAction;
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -22,5 +26,10 @@ return function (App $app) {
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
         $group->get('/{id}', ViewUserAction::class);
+    });
+
+    $app->group('/videos', function (Group $group) {
+        $group->get('', ListVideosAction::class);
+        $group->get('/{id}', ViewVideoAction::class);
     });
 };
