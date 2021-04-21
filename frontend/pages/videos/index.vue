@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <h1>Welcome to Our Video Library</h1>
+        <h1 class="title">Welcome to Our Video Library</h1>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <b-list-group>
-          <VideoItem
+          <VideoSummary
             v-for="video in videos"
             :key="video.id"
             :videosSection="video"
@@ -45,25 +45,16 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand',
-  'Source Sans Pro',
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  Roboto,
-  'Helvetica Neue',
-  Arial,
-  sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-weight: 50;
+  font-size: 50px;
+  color: #023B30;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 20px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

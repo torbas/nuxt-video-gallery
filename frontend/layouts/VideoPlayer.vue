@@ -6,7 +6,7 @@
       <source :src="video.video_id + '.mp4'" type="video/mp4">
     </b-embed>
     <br/>
-    <div class="description">
+    <div class="video-description">
       <h5 class="subtitle">Description</h5>
       <p class="snippet">
         {{ video.description }}
@@ -16,8 +16,12 @@
 </template>
 
 <script>
+
+//poster uses placeholder image 
+
 import { mapGetters } from 'vuex'
     export default {
+        middleware: 'redirect',
         computed: {
             video() {
                 return this.$store.getters.getVideoById(this.$route.params.id);
@@ -42,7 +46,7 @@ import { mapGetters } from 'vuex'
   margin-right: auto;
 }
 
-.description{
+.video-description{
   width:75%;
   margin-left: auto;
   margin-right: auto;
