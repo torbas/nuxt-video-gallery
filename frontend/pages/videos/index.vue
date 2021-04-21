@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  middleware: 'redirect',
+  //middleware: 'redirect',
   data() {
     return {
       videos: this.$store.state.videos,
