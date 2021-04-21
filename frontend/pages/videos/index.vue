@@ -24,7 +24,7 @@ export default {
   //middleware: 'redirect',
   data() {
     return {
-      videos: this.$store.state.videos.data,
+      videos: this.$store.state.videos,
     };
   },
 }

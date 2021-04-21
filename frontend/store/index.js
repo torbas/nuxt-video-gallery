@@ -40,8 +40,14 @@ const createStore = () => {
         },
         mutations: {
           setVideos(state, videos) {
-            state.videos = videos;
+            state.videos = videos.data;
           }
+        },
+        getters: {
+          getVideoById: (state) => (id) => {
+              console.log(state.videos);
+              return state.videos.find(video => video.id == id)
+          } 
         }
 
     })
