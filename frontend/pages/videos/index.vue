@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <h1>Welcome to Our Video Library {{ onSubmit() }}</h1>
+        <h1>Welcome to Our Video Library</h1>
       </div>
     </div>
     <div class="row">
@@ -27,11 +27,6 @@ export default {
       videos: this.$store.state.videos.data,
     };
   },
-  methods: {
-    onSubmit(){
-      console.log(this.videos);
-    },
-  }
 }
 </script>
 
@@ -43,6 +38,10 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.list-group-item:hover {
+  background-color:#E0E0E0;
 }
 
 .title {
