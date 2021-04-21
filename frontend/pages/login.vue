@@ -4,7 +4,7 @@
       <b-card>
         Welcome To Our Video Library, Please Log In
         <b-alert :show="showDismissibleAlert" ref="error" variant="danger" dismissible>
-          User not found.
+          Sorry, that username is not found
         </b-alert>
         <ValidationObserver tag="form" v-slot="{ valid }">
           <b-form @submit="onSubmit">
