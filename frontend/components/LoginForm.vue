@@ -133,4 +133,8 @@ export default {
 .links {
   padding-top: 15px;
 }
+
+button.btn.btn-primary[type=submit]{
+  background-color: #023B30;
+}
 </style>
