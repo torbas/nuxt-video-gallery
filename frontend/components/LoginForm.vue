@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     onSubmit(){
-    console.log("submit");
+      
       event.preventDefault();
       var username = this.form.username;
       

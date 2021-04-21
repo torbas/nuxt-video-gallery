@@ -2,33 +2,34 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <h1>Welcome to Our Video Library</h1>
+        <h1>Welcome to Our Video Library {{ onSubmit() }}</h1>
       </div>
     </div>
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col>1 of 3</b-col>
-        <b-col>2 of 3</b-col>
-        <b-col>3 of 3</b-col>
-      </b-row>
-    </b-container>
+    <div class="row">
+      <div class="col">
+        <b-list-group>
+          <VideoItem
+            v-for="video in videos"
+            :key="video.id"
+            :videosSection="video"
+           />
+        </b-list-group>
+      </div>
+    </div>
   </div>
-
 </template>
 
 <script>
 export default {
-  middleware: 'redirect',
+  //middleware: 'redirect',
   data() {
     return {
-      form: {
-        email: ''
-      },
+      videos: this.$store.state.videos.data,
     };
   },
   methods: {
     onSubmit(){
-      console.log('A form was submitted');
+      console.log(this.videos);
     },
   }
 }

@@ -30,8 +30,20 @@ const createStore = () => {
               this.state.loggedIn = true;
               //console.log("check login", this.state.loggedIn);
 
+            },
+            async nuxtServerInit({ commit }) {
+              const response = await this.$axios.get('/videos');
+              const videos = response.data;
+              //console.log(videos);
+              commit("setVideos", videos);
             }
+        },
+        mutations: {
+          setVideos(state, videos) {
+            state.videos = videos;
           }
+        }
+
     })
 }
 
