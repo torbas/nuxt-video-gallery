@@ -33,7 +33,7 @@
         };
       },
       async fetch() {
-        var url = 'http://fast.wistia.net/oembed?url=http://home.wistia.com/medias/' + this.videosSection.video_id + '?embedType=async&videoWidth=640';
+        var url = 'http://fast.wistia.net/oembed?url=http://home.wistia.com/medias/' + this.videosSection.video_id + '?embedType=async&videoWidth=240';
         let { data } = await this.$axios.get(url);
         this.videoInfo = data;
         console.log(this.videoInfo);

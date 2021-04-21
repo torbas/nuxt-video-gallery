@@ -45,7 +45,7 @@ const createStore = () => {
         },
         getters: {
           getVideoById: (state) => (id) => {
-              console.log(state.videos);
+              //console.log(state.videos);
               return state.videos.find(video => video.id == id)
           } 
         }

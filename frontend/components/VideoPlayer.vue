@@ -23,7 +23,7 @@
 </template>
 
 <script>
-	//TODO: style embed player
+	
     export default {
         computed: {
             video() {

@@ -1,27 +1,30 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h1 class="title">Welcome to Our Video Library</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <b-list-group>
+  <b-container-fluid>
+    <b-row>
+      <b-col cols="10"><h1 class="title">Welcome to Our Video Library</h1></b-col>
+      <b-col cols="2">
+        <NuxtLink to="/login">
+          <b-button class="logout" variant="outline-primary">Logout</b-button>
+        </NuxtLink>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-list-group class="main-video-list">
           <VideoSummary
             v-for="video in videos"
             :key="video.id"
             :videosSection="video"
            />
         </b-list-group>
-      </div>
-    </div>
-  </div>
+      </b-col>
+    </b-row>
+  </b-container-fluid>
 </template>
 
 <script>
 export default {
-  //middleware: 'redirect',
+  middleware: 'redirect',
   data() {
     return {
       videos: this.$store.state.videos,
@@ -50,6 +53,13 @@ export default {
   font-size: 50px;
   color: #023B30;
   letter-spacing: 1px;
+}
+
+.main-video-list{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:25px;
 }
 
 .subtitle {
