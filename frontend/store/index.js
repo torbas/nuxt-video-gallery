@@ -13,6 +13,10 @@ export const mutations = {
     //making this a toggle might be better but
     //keeping it simple
 
+    this.$cookies.set("loggedIn", loggedIn, {
+        path: "/"
+    });
+
     state.loggedIn = loggedIn;
 
   },

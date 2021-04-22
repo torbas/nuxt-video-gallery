@@ -8,6 +8,10 @@
 
 <script>
 
+  export default {
+    middleware: 'loginState',
+  }
+
 </script>
 
 <style>

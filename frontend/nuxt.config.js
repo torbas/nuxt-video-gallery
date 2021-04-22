@@ -56,6 +56,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    'cookie-universal-nuxt',
   ],
 
   axios: {
