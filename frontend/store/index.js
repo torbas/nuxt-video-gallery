@@ -7,19 +7,27 @@ export const state = () => ({
 export const mutations = {
   setVideos(state, videos) {
     state.videos = videos.data;
-  }
+  },
+  setLoggedIn(state, loggedIn) {
+    
+    //making this a toggle might be better but
+    //keeping it simple
+
+    state.loggedIn = loggedIn;
+
+  },
 };
 
 export const actions = {
-  async login() {
+  async login({ commit }) {
     //console.log("check login");
-    this.state.loggedIn = true;
+    commit("setLoggedIn", true);
     //console.log("check login", this.state.loggedIn);
 
   },
-  async logout() {
+  async logout({ commit }) {
     //console.log("check login");
-    this.state.loggedIn = false;
+    commit("setLoggedIn", false);
     //console.log("check login", this.state.loggedIn);
 
   },

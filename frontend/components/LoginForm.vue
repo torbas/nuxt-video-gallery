@@ -76,7 +76,7 @@ export default {
 
           //quick and dirty login TODO: make it more secure
           this.$store.dispatch('login');
-          this.$router.push('/videos');
+          this.$router.push('videos');
         } 
 
         if(!userFound){
