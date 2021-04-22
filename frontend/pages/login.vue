@@ -1,5 +1,9 @@
 <template>
-  <LoginForm />
+  <b-container>
+    <client-only>
+  		<LoginForm />
+  	</client-only>
+  </b-container>
 </template>
 
 <script>
@@ -23,6 +27,10 @@
 
 .links {
   padding-top: 15px;
+}
+
+.errors{
+	color:red;
 }
 
 </style>

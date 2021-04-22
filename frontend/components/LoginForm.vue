@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
-    <div>
       <b-card
         title = "Welcome To Our Video Library"
         sub-title = "Please Log In"
+        class="login-card"
       >
         <br/>
         <b-alert :show="showDismissibleAlert" ref="error" variant="danger" dismissible>
@@ -28,18 +27,17 @@
                 label-cols-sm="6"
                 label-cols-lg="6"
               ></b-form-input>
-              <span>{{ errors[0] }}</span>
+              <span class="errors">{{ errors[0] }}</span>
               </ValidationProvider>
             </b-form-group>
             <b-button :disabled="!valid" type="submit" variant="primary">Submit</b-button>
           </b-form>
         </ValidationObserver>
       </b-card>
-    </div>
-  </div>
 </template>
 
 <script>
+//TODO: figure out the server side, client side mismatch error
 import { ValidationObserver } from "vee-validate";
 import { ValidationProvider } from "vee-validate";
 
@@ -92,6 +90,10 @@ export default {
 </script>
 
 <style>
+
+.login-card{
+  width:50%;
+}
 
 button.btn.btn-primary[type=submit]{
   background-color: #023B30;

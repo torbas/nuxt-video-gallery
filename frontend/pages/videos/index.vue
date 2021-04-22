@@ -1,12 +1,7 @@
 <template>
-  <b-container-fluid>
+  <b-container fluid>
     <b-row>
-      <b-col cols="10"><h1 class="title">Welcome to Our Video Library</h1></b-col>
-      <b-col cols="2">
-        <NuxtLink to="/login">
-          <b-button class="logout" variant="outline-primary">Logout</b-button>
-        </NuxtLink>
-      </b-col>
+      <b-col cols="12"><h1 class="title">Welcome to Our Video Library</h1></b-col>
     </b-row>
     <b-row>
       <b-col>
@@ -19,7 +14,7 @@
         </b-list-group>
       </b-col>
     </b-row>
-  </b-container-fluid>
+  </b-container>
 </template>
 
 <script>

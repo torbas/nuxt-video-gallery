@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <Nuxt />
   </div>
 </template>
@@ -16,12 +17,19 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
 }
+
 
 .button--green {
   display: inline-block;
