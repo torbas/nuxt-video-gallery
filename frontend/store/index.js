@@ -1,45 +1,39 @@
-import Vuex from 'vuex'
 
+export const state = () => ({
+  loggedIn: false,
+  videos: [],
+});
 
-const createStore = () => {
-    return new Vuex.Store({
-        state: () => ({
-            // USER NAV COMPONENT
-            loggedIn: false,
-        }),
-        actions: {
-            async login() {
-              //console.log("check login");
-              this.state.loggedIn = true;
-              //console.log("check login", this.state.loggedIn);
+export const mutations = {
+  setVideos(state, videos) {
+    state.videos = videos.data;
+  }
+};
 
-            },
-            async logout() {
-              //console.log("check login");
-              this.state.loggedIn = false;
-              //console.log("check login", this.state.loggedIn);
+export const actions = {
+  async login() {
+    //console.log("check login");
+    this.state.loggedIn = true;
+    //console.log("check login", this.state.loggedIn);
 
-            },
-            async nuxtServerInit({ commit }) {
-              const response = await this.$axios.get('/videos');
-              const videos = response.data;
-              //console.log(videos);
-              commit("setVideos", videos);
-            }
-        },
-        mutations: {
-          setVideos(state, videos) {
-            state.videos = videos.data;
-          }
-        },
-        getters: {
-          getVideoById: (state) => (id) => {
-              //console.log(state.videos);
-              return state.videos.find(video => video.id == id)
-          } 
-        }
+  },
+  async logout() {
+    //console.log("check login");
+    this.state.loggedIn = false;
+    //console.log("check login", this.state.loggedIn);
 
-    })
-}
+  },
+  async nuxtServerInit({ commit }) {
+    const response = await this.$axios.get('/videos');
+    const videos = response.data;
+    //console.log(videos);
+    commit("setVideos", videos);
+  }
+};
 
-export default createStore
+export const getters = {
+    getVideoById: (state) => (id) => {
+        //console.log(state.videos);
+        return state.videos.find(video => video.id == id)
+    } 
+};
