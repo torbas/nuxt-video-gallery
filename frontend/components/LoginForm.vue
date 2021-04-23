@@ -102,7 +102,7 @@ button.btn.btn-primary[type=submit]{
 }
 
 input.username{
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
 .errors{
