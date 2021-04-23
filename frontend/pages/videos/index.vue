@@ -29,14 +29,6 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 .list-group-item:hover {
   background-color:#E0E0E0;
@@ -45,9 +37,11 @@ export default {
 .title {
   display: block;
   font-weight: 50;
-  font-size: 50px;
+  font-size: 25px;
   color: #023B30;
   letter-spacing: 1px;
+  padding-left:10px;
+  background-color:#FFF;
 }
 
 .main-video-list{
@@ -65,7 +59,4 @@ export default {
   padding-bottom: 15px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

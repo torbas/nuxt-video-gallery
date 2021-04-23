@@ -1,13 +1,14 @@
 <template>
-  <div class="container-fluid">
-  	<Navbar />
-    <VideoPlayer />
+  <div>
+    <Navbar />
+    <div class="container-fluid">
+      <b-button v-on:click="$router.go(-1)" class="back-button" variant="outline-primary">Back</b-button>
+      <VideoPlayer />
+    </div>
   </div>
 </template>
 
-<script>
-
-//poster uses placeholder image 
+<script> 
 
 import { mapGetters } from 'vuex'
     export default {
@@ -17,17 +18,21 @@ import { mapGetters } from 'vuex'
 
 <style>
 
-html, .container, .container-fluid{
-  font-family: "granville",Georgia,"Times New Roman",serif; 
-}
-
 body {
   width:80%;
   margin-right:auto;
   margin-left:auto;
 }
 
-.links {
-  padding-top: 15px;
+.back-button{
+  border-color:#023B30;
+  color:#023B30;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.back-button:hover, .back-button:active{
+  background-color:#023B30 !important;
+  color:#FFF;
 }
 </style>
