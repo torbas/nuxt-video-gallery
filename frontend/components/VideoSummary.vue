@@ -32,7 +32,7 @@
 </template>
 
 <script>
-
+  //TODO: add persist to viewed label
   export default {
       //links to videosSection in v-for loop in videos/index
       props: ['videosSection'],

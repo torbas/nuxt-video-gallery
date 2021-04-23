@@ -9,7 +9,7 @@
 </template>
 
 <script> 
-
+//TODO: add persist to back button
 import { mapGetters } from 'vuex'
     export default {
         middleware: 'redirect',
