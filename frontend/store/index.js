@@ -2,6 +2,7 @@
 export const state = () => ({
   loggedIn: false,
   videos: [],
+  viewed: [],
 });
 
 export const mutations = {
@@ -19,6 +20,13 @@ export const mutations = {
 
     state.loggedIn = loggedIn;
 
+  },
+  addViewed(state, video_id) {
+    //check and only add uniques
+    if(state.viewed.indexOf(video_id) === -1) {
+      state.viewed.push(video_id);
+    }
+    //console.log(state.viewed);
   },
 };
 
@@ -46,6 +54,9 @@ export const actions = {
 export const getters = {
     getVideoById: (state) => (id) => {
         //console.log(state.videos);
-        return state.videos.find(video => video.id == id)
+        return state.videos.find(video => video.id == id);
+    },
+    checkViewed: (state) => (video_id) => {
+        return state.viewed.indexOf(video_id);
     } 
 };

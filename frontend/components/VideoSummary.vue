@@ -2,9 +2,18 @@
   <b-list-group-item>
   <b-row>
     <b-col>
-      <NuxtLink :to="`/videos/${videosSection.id}`">
-        <h5 class="header">{{ videosSection.title }}</h5>
-      </NuxtLink>
+      <b-row>
+        <b-col>
+          <NuxtLink :to="`/videos/${videosSection.id}`">
+            <h5 class="header">
+              {{ videosSection.title }} 
+            </h5> 
+          </NuxtLink>
+        </b-col>
+        <b-col cols=1>
+          <b-badge v-if="checkViewed" class="viewed">Viewed</b-badge>
+        </b-col>
+      </b-row>
       <hr />
       <div class="description">
           <h5 class="subtitle">Description</h5>
@@ -37,6 +46,19 @@
         let { data } = await this.$axios.get(url);
         this.videoInfo = data;
       },
+      computed: {
+        checkViewed(){
+
+          var wasViewed = this.$store.getters.checkViewed(this.videosSection.video_id);
+          console.log("viewed", wasViewed);
+          if(wasViewed === -1){
+            return false;
+          } else {
+            return true;
+          }
+        
+        },
+      },
 
   }
 </script>
@@ -49,6 +71,11 @@
 
 .thumbnail{
   float: right;
+}
+
+.badge.viewed {
+  background-color: #023B30;
+
 }
 
 </style>

@@ -28,7 +28,10 @@
         computed: {
             video() {
             	//get id of video via url params
-                return this.$store.getters.getVideoById(this.$route.params.id);
+              var video = this.$store.getters.getVideoById(this.$route.params.id);
+              //add to viewed videos
+              this.$store.commit('addViewed', video.video_id);
+              return video;
             }
         },
     }
