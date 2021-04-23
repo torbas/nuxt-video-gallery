@@ -1,9 +1,9 @@
 <template>
   <b-nav align="right">
-    <NuxtLink to="/videos">
+    <NuxtLink v-if="showVideosLink" to="/videos">
       <b-button variant="outline-primary">Videos</b-button>
     </NuxtLink>
-    <NuxtLink to="/login">
+    <NuxtLink v-if="showLoginLink" to="/login">
       <b-button v-on:click="checkLogout" class="logout" variant="outline-primary">{{ checkLogin }}</b-button>
     </NuxtLink>
   </b-nav>
@@ -27,6 +27,21 @@ export default {
       }
     
     },
+    showVideosLink(){
+      if(this.$route.path == "/videos"){
+        return false;
+      } else {
+        return true;
+      }
+
+    },
+    showLoginLink(){
+      if(this.$route.path == "/login"){
+        return false;
+      } else {
+        return true;
+      }
+    }
   },
   methods: {
     checkLogout(){
