@@ -28,7 +28,7 @@ export default {
     
     },
     showVideosLink(){
-      if(this.$route.path == "/videos"){
+      if(this.$route.path == "/videos" || this.$route.path == "/login"){
         return false;
       } else {
         return true;

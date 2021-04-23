@@ -26,8 +26,10 @@
                 placeholder="Enter username"
                 label-cols-sm="6"
                 label-cols-lg="6"
+                @input="validate"
+                class="username"
               ></b-form-input>
-              <span class="errors">{{ errors[0] }}</span>
+              <span v-if="errors.length > 0" class="errors alert-danger">{{ errors[0] }}</span>
               </ValidationProvider>
             </b-form-group>
             <b-button :disabled="!valid" type="submit" variant="primary">Submit</b-button>
@@ -97,5 +99,14 @@ export default {
 
 button.btn.btn-primary[type=submit]{
   background-color: #023B30;
+}
+
+input.username{
+  margin-bottom:10px;
+}
+
+.errors{
+  border-radius:0.25em;
+  padding: 10px;
 }
 </style>

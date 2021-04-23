@@ -33,8 +33,4 @@
   padding-top: 15px;
 }
 
-.errors{
-	color:red;
-}
-
 </style>
